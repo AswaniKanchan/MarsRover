@@ -9,7 +9,7 @@ public class DirectionTest {
 
     @Test
     public void testDirectionForValidOrder() throws ExplorationException {
-        assert(Direction.getDirection(0).equals(Direction.WEST));
+        assert(Direction.getDirection(1).equals(Direction.WEST));
     }
 
     @Test

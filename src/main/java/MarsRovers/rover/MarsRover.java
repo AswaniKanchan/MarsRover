@@ -15,20 +15,20 @@ public class MarsRover implements Rover {
     @Override
     public void turnLeft() throws ExplorationException {
         int distinctDirections = Direction.values().length;
-        int minIndex = 0;
-        int maxIndex = distinctDirections-1;
-        int leftIndex = (position.getDirection().getOrder() - 1) % distinctDirections;
-        if(leftIndex<minIndex) leftIndex = maxIndex;
+        int minIndex = 1;
+        int maxIndex = distinctDirections;
+        int leftIndex = (position.getDirection().getOrder() - 1) % (maxIndex+1);
+        if(leftIndex < minIndex) leftIndex = maxIndex;
         position.setDirection(Direction.getDirection(leftIndex));
     }
 
     @Override
     public void turnRight() throws ExplorationException {
         int distinctDirections = Direction.values().length;
-        int minIndex = 0;
-        int maxIndex = distinctDirections-1;
-        int rightIndex = (position.getDirection().getOrder() + 1) % distinctDirections;
-        if(rightIndex>maxIndex) rightIndex = minIndex;
+        int minIndex = 1;
+        int maxIndex = distinctDirections;
+        int rightIndex = (position.getDirection().getOrder() + 1) % (maxIndex+1);
+        if(rightIndex<minIndex) rightIndex = minIndex;
         position.setDirection(Direction.getDirection(rightIndex));
     }
 

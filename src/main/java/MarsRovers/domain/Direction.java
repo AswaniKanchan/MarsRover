@@ -3,10 +3,10 @@ package main.java.MarsRovers.domain;
 import main.java.MarsRovers.exception.ExplorationException;
 
 public enum Direction {
-    WEST(0),
-    NORTH(1),
-    EAST(2),
-    SOUTH(3);
+    WEST(1),
+    NORTH(2),
+    EAST(3),
+    SOUTH(4);
 
     //Increasing order means direction to the right else to the left
     private int order;
@@ -15,9 +15,9 @@ public enum Direction {
         this.order = order;
     }
 
-    public static Direction getDirection(int value) throws ExplorationException {
+    public static Direction getDirection(int order) throws ExplorationException {
         for (Direction direction : Direction.values()) {
-            if (direction.order == value) return direction;
+            if (direction.order == order) return direction;
         }
         throw new ExplorationException("Direction not found. Please check");
     }
