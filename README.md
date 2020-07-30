@@ -20,6 +20,15 @@ Assumptions
 -	Lower left coordinates are 0,0
 -	M would mean move by 1 step only
 -	Input file will have data in consecutive lines, else empty line for command string would imply no action is to be taken and for others would fail saying unable to derive coordinates
+- Input file will follow a template given below
+
+Template File
+- Line 1: Two integers separated by spaces to derive grid top right coordinates: <5 5>
+- <Loop>
+-     Line 2i  : Two integers followed by a capital letter from the given list: [W, N, E, S] to derive rovers current position: <3 3 N>
+-      Line 2i+1: A string which is either empty or is made up with characters from given list: [LRM]
+- </Loop>
+
 
 Tech Stack
 - Java
