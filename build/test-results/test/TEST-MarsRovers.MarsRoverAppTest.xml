@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MarsRovers.MarsRoverAppTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2020-07-29T18:27:44" hostname="artstic.local" time="0.045">
+  <properties/>
+  <testcase name="testMarsRoversAppWithNullAsFileName()" classname="MarsRovers.MarsRoverAppTest" time="0.001"/>
+  <testcase name="testMarsRoversAppWithInvalidInputsWhereRoverTriesToCrossGrid()" classname="MarsRovers.MarsRoverAppTest" time="0.003"/>
+  <testcase name="testMarsRoversAppWithEmptyFile()" classname="MarsRovers.MarsRoverAppTest" time="0.002"/>
+  <testcase name="testMarsRoversAppWithInvalidExplorationCommands()" classname="MarsRovers.MarsRoverAppTest" time="0.003"/>
+  <testcase name="testMarsRoversAppWithNoRovers()" classname="MarsRovers.MarsRoverAppTest" time="0.002"/>
+  <testcase name="testMarsRoversAppWithRandomStringAsFileName()" classname="MarsRovers.MarsRoverAppTest" time="0.001"/>
+  <testcase name="testMarsRoversAppWithMissingDirectionInRoverPosition()" classname="MarsRovers.MarsRoverAppTest" time="0.005"/>
+  <testcase name="testMarsRoversAppWithNoFileName()" classname="MarsRovers.MarsRoverAppTest" time="0.001"/>
+  <testcase name="testMarsRoversAppForProvidedValidInputs()" classname="MarsRovers.MarsRoverAppTest" time="0.003"/>
+  <testcase name="testMarsRoversAppWithInsufficientGridCoords()" classname="MarsRovers.MarsRoverAppTest" time="0.002"/>
+  <testcase name="testMarsRoversAppWithMissingCoordsInRoverPosition()" classname="MarsRovers.MarsRoverAppTest" time="0.002"/>
+  <testcase name="testMarsRoversAppWithIncorrectRoverDirection()" classname="MarsRovers.MarsRoverAppTest" time="0.002"/>
+  <system-out><![CDATA[Nothing to process as file is empty.
+1 3 N
+1 3 N
+5 1 E
+Unable to parse grid coordinates from '5 '
+1 3 N
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

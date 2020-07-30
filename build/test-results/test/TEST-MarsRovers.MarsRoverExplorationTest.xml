@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MarsRovers.MarsRoverExplorationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-07-29T18:27:44" hostname="artstic.local" time="0.098">
+  <properties/>
+  <testcase name="testRoverWhenMoveCommandFallsOutsideGridXAxis()" classname="MarsRovers.MarsRoverExplorationTest" time="0.015"/>
+  <testcase name="testRoverWhenMoveCommandFallsOutsideGridYAxis()" classname="MarsRovers.MarsRoverExplorationTest" time="0.001"/>
+  <testcase name="testExplorationWithProvidedSample1()" classname="MarsRovers.MarsRoverExplorationTest" time="0.001"/>
+  <testcase name="testExplorationWithProvidedSample2()" classname="MarsRovers.MarsRoverExplorationTest" time="0.046"/>
+  <testcase name="testRoverWhenOperationsStringAsNull()" classname="MarsRovers.MarsRoverExplorationTest" time="0.022"/>
+  <testcase name="testRoverWhenGridMaxCoordinatesNotGiven()" classname="MarsRovers.MarsRoverExplorationTest" time="0.001"/>
+  <testcase name="testRoverWhenGridMaxCoordinatesNotGivenFlavor2()" classname="MarsRovers.MarsRoverExplorationTest" time="0.002"/>
+  <system-out><![CDATA[Input: 3 3 E, Operation String: MMRMMRMRRM, Output: 5 1 E
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
