@@ -1,6 +1,7 @@
-package MarsRovers;
+package test.java.MarsRovers;
 
-import MarsRovers.exception.ExplorationException;
+import main.java.MarsRovers.MarsRoversApp;
+import main.java.MarsRovers.exception.ExplorationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -20,8 +21,7 @@ public class MarsRoverAppTest {
         Throwable exception = Assertions.assertThrows(ExplorationException.class,
                 ()->{
                     String[] args = getArgsWithInvalidInputsWhereRoverTriesToCrossGrid();
-                    MarsRoversApp.main(args);
-                });
+                    MarsRoversApp.main(args); });
         assert(exception.getMessage().equals("Incorrect Move"));
     }
 
@@ -32,13 +32,11 @@ public class MarsRoverAppTest {
     }
 
     @Test
-    public void testMarsRoversAppWithInsufficientGridCoords() {
-        try {
-            String[] args = getArgsWithInsufficientGridCoords();
-            MarsRoversApp.main(args);
-        } catch (ExplorationException | IOException exception) {
-            System.out.println(exception.getMessage());
-        }
+    public void testMarsRoversAppWithInsufficientGridCoords() throws IOException {
+        String[] args = getArgsWithInsufficientGridCoords();
+        Throwable exception = Assertions.assertThrows(ExplorationException.class,
+                ()->MarsRoversApp.main(args));
+        assert(exception.getMessage().equals("Unable to parse grid coordinates from '5 '"));
     }
 
     @Test
@@ -68,8 +66,7 @@ public class MarsRoverAppTest {
         Throwable exception = Assertions.assertThrows(ExplorationException.class,
                 ()->{
                     String[] args = getArgsWithIncorrectRoverDirection();
-                    MarsRoversApp.main(args);
-                });
+                    MarsRoversApp.main(args); });
 
         assert(exception.getMessage().equals("Unable to parse Rover position from '1 2 K'"));
     }
@@ -79,8 +76,7 @@ public class MarsRoverAppTest {
         Throwable exception = Assertions.assertThrows(ExplorationException.class,
                 ()->{
                     String[] args = getArgsWithIncorrectExplorationCommands();
-                    MarsRoversApp.main(args);
-                });
+                    MarsRoversApp.main(args);});
 
         assert(exception.getMessage().equals("Unable to parse exploration commands from 'ABC'"));
     }
@@ -90,8 +86,7 @@ public class MarsRoverAppTest {
         Throwable exception = Assertions.assertThrows(ExplorationException.class,
                 ()->{
                     String[] args = null;
-                    MarsRoversApp.main(args);
-                });
+                    MarsRoversApp.main(args);});
 
         assert(exception.getMessage().equals("Please provide input file to process for mars rover exploration"));
     }
@@ -101,8 +96,7 @@ public class MarsRoverAppTest {
         Throwable exception = Assertions.assertThrows(ExplorationException.class,
                 ()->{
                     String[] args = new String[0];
-                    MarsRoversApp.main(args);
-                });
+                    MarsRoversApp.main(args); });
 
         assert(exception.getMessage().equals("Please provide input file to process for mars rover exploration"));
     }
@@ -113,8 +107,7 @@ public class MarsRoverAppTest {
                 ()->{
                     String[] args = new String[1];
                     args[0]="RandomName";
-                    MarsRoversApp.main(args);
-                });
+                    MarsRoversApp.main(args); });
 
         assert(exception.getMessage().equals("Unable to find file. Please provide a valid file"));
     }
@@ -123,6 +116,14 @@ public class MarsRoverAppTest {
     public void testMarsRoversAppWithEmptyFile() throws ExplorationException, IOException {
         String[] args = getArgsWithEmptyFile();
         MarsRoversApp.main(args);
+    }
+
+    @Test
+    public void testMarsRoversAppWithFileThatCantBeRead() throws ExplorationException, IOException {
+        String[] args = getArgsWithFileThatCantBeRead();
+        Throwable exception = Assertions.assertThrows(ExplorationException.class,
+                ()->MarsRoversApp.main(args));
+        assert(exception.getMessage().equals("Unable to read file. Please grant read permissions to the program"));
     }
 
     private String[] getArgsWithIncorrectExplorationCommands() throws IOException {
@@ -144,6 +145,16 @@ public class MarsRoverAppTest {
         FileWriter writer = new FileWriter(file.getName());
         writer.write("5 5\n1 2 K\nLMLMLMLMM\n");
         writer.close();
+        String[] args = new String[1];
+        args[0]=file.getAbsolutePath();
+        return args;
+    }
+
+    private String[] getArgsWithFileThatCantBeRead() throws IOException {
+        File file = new File("Empty.txt");
+        file.createNewFile();
+        file.deleteOnExit();
+        file.setReadable(false);
         String[] args = new String[1];
         args[0]=file.getAbsolutePath();
         return args;

@@ -1,10 +1,11 @@
-package MarsRovers;
+package test.java.MarsRovers;
 
-import MarsRovers.domain.Coordinate;
-import MarsRovers.domain.Direction;
-import MarsRovers.domain.Position;
-import MarsRovers.exception.ExplorationException;
-import MarsRovers.rover.MarsRover;
+import main.java.MarsRovers.MarsRoverExploration;
+import main.java.MarsRovers.domain.Coordinate;
+import main.java.MarsRovers.domain.Direction;
+import main.java.MarsRovers.domain.Position;
+import main.java.MarsRovers.exception.ExplorationException;
+import main.java.MarsRovers.rover.MarsRover;
 import org.junit.Rule;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -63,8 +64,7 @@ public class MarsRoverExplorationTest {
 
         Throwable exception = Assertions.assertThrows(ExplorationException.class,
                 ()->{
-                    marsRoverExploration.explore(rover, operationString);
-                });
+                    marsRoverExploration.explore(rover, operationString); });
 
         assert(exception.getMessage().equals("Unable to parse exploration commands from 'null'"));
     }
@@ -84,8 +84,7 @@ public class MarsRoverExplorationTest {
 
         Throwable exceptionThatWasThrown = Assertions.assertThrows(ExplorationException.class,
                 ()->{
-                    marsRoverExploration.explore(rover, operationString);
-                });
+                    marsRoverExploration.explore(rover, operationString); });
         assert(exceptionThatWasThrown.getMessage().equals("Incorrect Move"));
     }
 
@@ -99,8 +98,7 @@ public class MarsRoverExplorationTest {
 
         Throwable exceptionThatWasThrown = Assertions.assertThrows(ExplorationException.class,
                 ()->{
-                    marsRoverExploration.explore(rover, operationString);
-                });
+                    marsRoverExploration.explore(rover, operationString); });
         assert(exceptionThatWasThrown.getMessage().equals("Please set grid max coordinates to proceed"));
     }
 
@@ -114,8 +112,7 @@ public class MarsRoverExplorationTest {
 
         Throwable exceptionThatWasThrown = Assertions.assertThrows(ExplorationException.class,
                 ()->{
-                    marsRoverExploration.explore(rover, commands);
-                });
+                    marsRoverExploration.explore(rover, commands); });
         assert(exceptionThatWasThrown.getMessage().equals("Please set grid max coordinates to proceed"));
     }
 
@@ -132,8 +129,7 @@ public class MarsRoverExplorationTest {
 
         Throwable exceptionThatWasThrown =  Assertions.assertThrows(ExplorationException.class,
                 ()->{
-                    marsRoverExploration.explore(rover, operationString);
-                });
+                    marsRoverExploration.explore(rover, operationString); });
         assert(exceptionThatWasThrown.getMessage().equals("Incorrect Move"));
     }
 

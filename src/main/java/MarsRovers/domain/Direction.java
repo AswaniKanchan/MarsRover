@@ -1,6 +1,6 @@
-package MarsRovers.domain;
+package main.java.MarsRovers.domain;
 
-import MarsRovers.exception.ExplorationException;
+import main.java.MarsRovers.exception.ExplorationException;
 
 public enum Direction {
     WEST(0),

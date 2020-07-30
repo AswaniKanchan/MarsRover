@@ -1,11 +1,11 @@
-package MarsRovers;
+package main.java.MarsRovers;
 
-import MarsRovers.domain.Coordinate;
-import MarsRovers.domain.Direction;
-import MarsRovers.domain.Position;
-import MarsRovers.exception.ExplorationException;
-import MarsRovers.rover.MarsRover;
-import MarsRovers.rover.Rover;
+import main.java.MarsRovers.domain.Coordinate;
+import main.java.MarsRovers.domain.Direction;
+import main.java.MarsRovers.domain.Position;
+import main.java.MarsRovers.exception.ExplorationException;
+import main.java.MarsRovers.rover.MarsRover;
+import main.java.MarsRovers.rover.Rover;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public class MarsRoverExploration {
         return true;
     }
 
-    public void explore(String fileName) throws ExplorationException {
+    public void explore(String fileName) throws ExplorationException, IOException {
         File file = getFile(fileName);
         if(file.length() == 0) {
             System.out.println("Nothing to process as file is empty.");
@@ -70,9 +70,6 @@ public class MarsRoverExploration {
                 explore(rover, commands);
                 System.out.println(getRoverPositionString(rover));
             }
-        } catch (IOException exception){
-            throw new ExplorationException("Failed to process file. Please validate input file. Exception Trace: " +
-                    exception.getMessage());
         }
     }
 

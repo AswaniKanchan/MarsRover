@@ -1,8 +1,8 @@
-package MarsRovers.rover;
+package main.java.MarsRovers.rover;
 
-import MarsRovers.domain.Coordinate;
-import MarsRovers.domain.Position;
-import MarsRovers.exception.ExplorationException;
+import main.java.MarsRovers.domain.Coordinate;
+import main.java.MarsRovers.domain.Position;
+import main.java.MarsRovers.exception.ExplorationException;
 
 public interface Rover {
     void turnLeft() throws ExplorationException;

@@ -1,9 +1,9 @@
-package MarsRovers.rover;
+package main.java.MarsRovers.rover;
 
-import MarsRovers.domain.Coordinate;
-import MarsRovers.domain.Direction;
-import MarsRovers.domain.Position;
-import MarsRovers.exception.ExplorationException;
+import main.java.MarsRovers.domain.Coordinate;
+import main.java.MarsRovers.domain.Direction;
+import main.java.MarsRovers.domain.Position;
+import main.java.MarsRovers.exception.ExplorationException;
 
 public class MarsRover implements Rover {
     private Position position;

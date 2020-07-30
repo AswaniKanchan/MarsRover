@@ -1,4 +1,4 @@
-package MarsRovers.domain;
+package main.java.MarsRovers.domain;
 
 public class Position {
     private Direction direction;
